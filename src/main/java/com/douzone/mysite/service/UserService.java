@@ -28,6 +28,10 @@ public class UserService {
 		return userDao.get( email, password );
 	}
 	
+	public UserVo getUser(String role) {
+		return userDao.get( role);
+	}
+	
 	public UserVo getUser( Long no ) {
 		return userDao.get( no );
 	}

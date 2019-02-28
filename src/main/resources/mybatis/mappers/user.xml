@@ -25,7 +25,6 @@
 		 where email=#{email }
 		]]>
 	</select>
-	
 	<select id="getByNo" resultType="uservo" parameterType="long">
 		<![CDATA[
 		select no, name, email, gender 
