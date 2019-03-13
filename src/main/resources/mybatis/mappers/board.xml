@@ -89,7 +89,7 @@
 				  select a.no,
 				  		 a.title,
 				  		 a.hit,
-				  		 date_format(a.regDate, '%Y-%m-%d %p %h:%i:%s') as regDate,
+				  		 date_format(a.regDate, '%Y-%m-%d %h:%i:%s') as regDate,
 				  		 a.depth,
 				  		 b.name as userName,
 				  		 a.userNo as userNo

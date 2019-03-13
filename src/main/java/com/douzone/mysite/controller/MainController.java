@@ -18,8 +18,8 @@ public class MainController {
 	
 	@RequestMapping( { "/", "/main" } )
 	public String index( Model model ) {
-		// SiteVo siteVo = siteService.getSiteInformation();
-		// model.addAttribute("site", siteVo);
+		 //SiteVo siteVo = siteService.getSiteInformation();
+		 model.addAttribute("siteVo", siteService.get());
 		return "main/index";
 	}
 	
@@ -29,9 +29,10 @@ public class MainController {
 		return "<h1>안녕하세요</h1>";
 	}
 	
-	@ResponseBody
-	@RequestMapping( "/hello2" )
-	public JSONResult hello2() {
-		return JSONResult.success(new UserVo());
-	}
+	/*
+	 * @ResponseBody
+	 * 
+	 * @RequestMapping( "/hello2" ) public JSONResult hello2() { return
+	 * JSONResult.success(new UserVo()); }
+	 */
 }

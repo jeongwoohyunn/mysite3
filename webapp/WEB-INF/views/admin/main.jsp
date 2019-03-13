@@ -28,7 +28,7 @@
 						<input type="file" name="upload-profile">
 
 						<label class="block-label">사이트 설명</label>
-						<textarea name="desc">${siteVo.description }</textarea>
+						<textarea name="description">${siteVo.description }</textarea>
 						
 						<input type="submit" value="변경" />
 					</form>

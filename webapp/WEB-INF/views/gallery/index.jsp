@@ -65,13 +65,16 @@
 					</c:if>
 				</div>
 				<ul>
+					
+					<c:forEach items="${ list}" var="vo">
 						<li><a
-							href="${pageContext.request.contextPath }/assets/gallery-examples/++.jpg"
+							href="${pageContext.request.contextPath }${vo.image_url}"
 							data-lightbox="gallery" class="image"
-							style="background-image:url('${pageContext.request.contextPath }/assets/gallery-examples/im1.jpg')">&nbsp;</a>
+							style="background-image:url('${pageContext.request.contextPath }${vo.image_url}')">&nbsp;</a>
 							<c:if test="${not empty authUser && authUser.role=='ADMIN' }">
-								<a href="" class="del-button" title="삭제">삭제</a>
+								<a href="${pageContext.request.contextPath }/gallery/delete/${vo.no}" class="del-button" title="삭제">삭제</a>
 							</c:if></li>
+					</c:forEach>
 				</ul>
 			</div>
 

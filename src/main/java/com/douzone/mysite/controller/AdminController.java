@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.douzone.mysite.service.GalleryService;
+import com.douzone.mysite.service.FileuploadService;
 import com.douzone.mysite.service.SiteService;
 import com.douzone.mysite.vo.SiteVo;
 import com.douzone.security.Auth;
@@ -22,7 +22,7 @@ public class AdminController {
 	private SiteService siteService;
 
 	@Autowired
-	private GalleryService fileuploadService;
+	private FileuploadService fileuploadService;
 	// 주입받음
 
 	@Auth(Role.ADMIN)
@@ -54,7 +54,6 @@ public class AdminController {
 	@RequestMapping("/main/update")
 	public String update(@ModelAttribute SiteVo siteVo,
 			@RequestParam(value = "upload-profile") MultipartFile multipartFile) {
-		siteService.update(siteVo);
 
 		String profile = fileuploadService.restore(multipartFile);
 		siteVo.setProfile(profile);

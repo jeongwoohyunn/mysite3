@@ -26,7 +26,10 @@ public class UserController {
 	private UserService userService;
 
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
-	public String join() {
+	public String join(/*@ModelAttribute UserVo userVo*/Model model) {
+		model.addAttribute("userVo",new UserVo());
+		//get에 빈껍데기를 넣어서 오류를 없애준다.
+		//null안들고오게 vo는적어주고 valid는 뺴준다.
 		return "user/join";
 	}
 
