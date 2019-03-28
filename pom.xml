@@ -10,14 +10,13 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<org.springframework-version>4.2.1.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.1.RELEASE</org.springframework-version>
 		<jcloverslf4j.version>1.7.6</jcloverslf4j.version>
 		<logback.version>1.1.1</logback.version>
 	</properties>
-
-	<!-- library 설정( Depnedency 설정 ) -->
+	<!-- library 설정(Dependency 설정 -->
 	<dependencies>
-		<!-- spring core -->
+		<!-- Spring Core -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -31,17 +30,10 @@
 			</exclusions>
 		</dependency>
 
-		<!-- spring web -->
+		<!-- Spring Web -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-
-		<!-- spring mvc -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
@@ -49,6 +41,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
@@ -65,24 +63,18 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.2.2</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.0</version>
 		</dependency>
 
-		<!-- Common DBCP -->
+		<!-- Common DBCP(MySQL인 경우) -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
-		</dependency>
-
-		<!-- mysql jdbc -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.38</version>
 		</dependency>
 
 		<!-- validation -->
@@ -98,7 +90,6 @@
 			<version>4.2.0.Final</version>
 		</dependency>
 
-
 		<!-- jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -106,7 +97,14 @@
 			<version>1.2</version>
 		</dependency>
 
+		<!-- MYSQL Connector JDBC Driver -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.38</version>
+		</dependency>
 
+		<!-- 파일 업로드 파일 -->
 		<!-- common fileupload -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -125,11 +123,6 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.3.1</version>
 		</dependency>
-		<!-- <dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-moudle-parameter-names</artifactId>
-			<version>2.3.1</version>
-		</dependency> -->
 
 		<!-- Logback -->
 		<dependency>
@@ -143,10 +136,6 @@
 			<version>${logback.version}</version>
 		</dependency>
 	</dependencies>
-	
-	
-	
-	<!-- profile추가 -->
 	<profiles>
 		<profile>
 			<id>production</id>
@@ -165,6 +154,7 @@
 						</excludes>
 					</resource>
 				</resources>
+				
 				<plugins>
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
@@ -192,7 +182,7 @@
 			</dependencies>
 		</profile>
 	</profiles>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -203,8 +193,6 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			
-			<!-- tomcat maven plugin 추가 -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.1</version>
